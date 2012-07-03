@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="sv">
-
   <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -16,47 +15,47 @@
   <body>
       <div id="header">
         <h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-        <p id="description"><?php bloginfo( 'description' ); ?></p>
-      </div><!-- header -->
+        
+      </div>
 
 	<article>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<div class="post">
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<?php if ( the_title('','',false)<>'Untitled' ) : ?>
+					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+				<?php endif; ?>
 				<?php the_content(); ?>
 				<?php if ( !is_singular() && get_the_title() == '' ) : ?>
 					<a href="<?php the_permalink(); ?>">(more...)</a>
 				<?php endif; ?>
-				<?php if ( is_singular() ) : ?>
-					<div class="pagination"><?php wp_link_pages(); ?></div>
-				<?php endif; ?>
+				<p class="datestamp">&mdash; <a href="<?php the_permalink(); ?>"><?php the_date(); ?></a></p>
  			</div>
 
 			<?php if ( is_singular() ) : ?>
-				<div class="meta">
-					<p>—<a href="<?php the_permalink(); ?>"><?php the_date(); ?></a></p>
-				</div>
-
 				<?php comments_template(); ?>
-
 			<?php endif; ?>
 
         <?php endwhile; else: ?>
-			<div class="hentry"><h2>Sorry, the page you requested cannot be found</h2></div>
+			<div class="hentry"><h1>Ledsen, men sidan du efterfrågar verkar inte finnas.</h1></div>
 
         <?php endif; ?>
 
         </div>
         
-        <?php if ( is_singular() || is_404() ) : ?>
-          <div class="left"><a href="<?php bloginfo( 'url' ); ?>">&laquo; Home page</a></div>
+    </article>
+    <div id="footer">
+    	<?php if ( is_singular() || is_404() ) : ?>
+    		<nav><a href="<?php bloginfo( 'url' ); ?>">&laquo; Till första sidan</a></nav>
         <?php else : ?>
           	<nav>
-		<?php next_posts_link( '&laquo; Äldre' ); ?>
-          	<?php previous_posts_link( 'Nyare &raquo;' ); ?>
-		</nav>
+	          	<?php next_posts_link( '&laquo; Äldre' ); ?>
+	          	<?php previous_posts_link( 'Nyare &raquo;' ); ?>
+	        </nav>
         <?php endif; ?>
-    
-    </article>
+        <div id="description">
+        	<?php bloginfo( 'description' ); ?>
+        </div>
+        <?php get_search_form(); ?>
+    </div>
   </body>
 </html>
