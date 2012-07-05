@@ -51,7 +51,7 @@
 	        </nav>
         <?php endif; ?>
         <div id="description">
-        	<p><span class="asterisk">&#10045;</span> skrivs av Joakim Hertze och publiceras med Wordpress. All text är satt i <a href="http://www.myfonts.com/fonts/anatoletype/acuta-medium/"><em>Acuta</em></a>. Kontakta mig via gärna via <a href="mailto:desk@swedishpixels.com">epost</a>, eller <a href="http://twitter.com/hertze">Twitter</a>.</p>
+        	<p><span class="asterisk">&#10045;</span> skrivs av Joakim Hertze och publiceras med Wordpress. Innehåll från <em>Instagram</em> och <em>Readability</em> aggregeras med hjälp av <a href="http://ifttt.com"><em>IFTTT</em></a>. All text är satt i <a href="http://www.myfonts.com/fonts/anatoletype/acuta-medium/"><em>Acuta</em></a>. Kontakta mig via gärna via <a href="mailto:desk@swedishpixels.com">epost</a>, eller <a href="http://twitter.com/hertze">Twitter</a>.</p>
         </div>
         <?php get_search_form(); ?>
     </div>
