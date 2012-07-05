@@ -20,6 +20,10 @@
       </div>
 
 	<article>
+		<?php if ( is_search() ) : ?>
+			<h2>Du har sökt efter &#8221;<?php the_search_query(); ?>&#8221;&#8230;</h2>
+    	<?php endif; ?>
+    	
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<div class="post" class="<?php $category = get_the_category(); echo $category[0]->cat_name; ?>" >
 				<?php if ( the_title('','',false)<>'Untitled' ) : ?>
