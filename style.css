@@ -1,4 +1,7 @@
-/* @override http://asterisk.hertze.com/wp-content/themes/paperlike/style.css */
+/* @override 
+	http://asterisk.hertze.com/wp-content/themes/paperlike/style.css
+	http://notes.hertze.com/wp-content/themes/paperlike/style.css
+*/
 
 /*
 Theme Name: Paperlike
@@ -40,6 +43,9 @@ nav {
 	margin-left: -4em;
 }
 
+nav a {
+	margin-left: 1em;
+}
 
 /* Typografi */
 
@@ -55,7 +61,16 @@ p {
 	margin-bottom: 1.5em;
 }
 
-#description {
+blockquote {
+	margin-left: 1.5em;
+}
+
+blockquote p {
+	font-size: 0.8em;
+	line-height: 1.875em;
+}
+
+#description p {
 	font-size: 0.8em;
 	line-height: 1.875em;
 	color: #b2b0ac;
@@ -129,6 +144,23 @@ a:hover, .post p a:hover, #header h1 a:hover {
 	max-width: 100%;
 }
 
+.post ul {
+	list-style-type: disc;
+}
+
+.post ol {
+	list-style-type: decimal;
+}
+
+.post li {
+	margin-left: 1.5em;	
+}
+
+.asterisk {
+	font-size: 1.5em;
+	position: relative;
+	top: 0.15em;
+}
 
 /* Search-box */
 
@@ -212,4 +244,19 @@ form input {
 	margin: 2.25em 0;
 	padding-bottom: 0.75em;
 	border-bottom: 1px solid #e4e1dc;
+}
+
+/* Responsivt */
+
+@media screen and (max-device-width: 768px) {
+	
+}
+
+@media screen and (max-device-width: 480px) {
+	body { font-size: 350%; width: 100%; margin-top: 3em; }
+	.post, #footer { padding: 0 5%; }
+	article img { width:100%%; }
+	#header { position:inherit; width: 3em; margin: 0 auto; }
+	#searchsubmit { display: none; }
+	#searchform #s { width: 90%; padding: 5%; font-size: 100%; -webkit-appearance: none; }
 }
