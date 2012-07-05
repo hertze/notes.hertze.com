@@ -10,6 +10,7 @@
     <?php wp_head(); ?>
 	<script type="text/javascript" src="http://use.typekit.com/uod8oex.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script src="http://hertze.nfshost.com/mint/?js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -20,15 +21,12 @@
 
 	<article>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			<div class="post">
+			<div class="post" class="<?php $category = get_the_category(); echo $category[0]->cat_name; ?>" >
 				<?php if ( the_title('','',false)<>'Untitled' ) : ?>
 					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 				<?php endif; ?>
 				<?php the_content(); ?>
-				<?php if ( !is_singular() && get_the_title() == '' ) : ?>
-					<a href="<?php the_permalink(); ?>">(more...)</a>
-				<?php endif; ?>
-				<p class="datestamp">&mdash; <a href="<?php the_permalink(); ?>"><?php the_date(); ?></a></p>
+				<p class="datestamp">&mdash; <a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></span></a></p>
  			</div>
 
 			<?php if ( is_singular() ) : ?>
@@ -53,7 +51,7 @@
 	        </nav>
         <?php endif; ?>
         <div id="description">
-        	<?php bloginfo( 'description' ); ?>
+        	<p><span class="asterisk">&#10045;</span> skrivs av Joakim Hertze och publiceras med Wordpress. All text är satt i <a href="http://www.myfonts.com/fonts/anatoletype/acuta-medium/"><em>Acuta</em></a>. Kontakta mig via gärna via <a href="mailto:desk@swedishpixels.com">epost</a>, eller <a href="http://twitter.com/hertze">Twitter</a>.</p>
         </div>
         <?php get_search_form(); ?>
     </div>
