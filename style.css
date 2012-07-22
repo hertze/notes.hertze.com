@@ -1,8 +1,3 @@
-/* @override 
-	http://asterisk.hertze.com/wp-content/themes/paperlike/style.css
-	http://notes.hertze.com/wp-content/themes/paperlike/style.css
-*/
-
 /*
 Theme Name: Paperlike
 Description: Du vet nog.
@@ -52,13 +47,17 @@ nav a {
 body {
 	font-weight: 300;
 	font-size: 100%;
-	color: #5a5853;
+	color: #727069;
 }
 
 p { 
 	font-size: 1em;
 	line-height: 1.5em;
 	margin-bottom: 1.5em;
+}
+
+strong {
+	font-weight: 700;
 }
 
 blockquote {
@@ -107,7 +106,7 @@ article h2 {
 }
 
 a {
-	color: #727069;
+	color: #8d8a82;
 	text-decoration: none;
 }
 
@@ -255,9 +254,11 @@ form input {
 
 @media screen and (max-device-width: 480px) {
 	body { font-size: 350%; width: 100%; margin-top: 3em; }
-	.post, #footer { padding: 0 5%; }
+	.post, #footer, #respond, #comments { padding: 0 5%; }
 	article img { width:100%%; }
 	#header { position:inherit; width: 3em; margin: 0 auto; }
 	#searchsubmit { display: none; }
 	#searchform #s { width: 90%; padding: 5%; font-size: 100%; -webkit-appearance: none; }
+	#submit { font-size: 100%; }
+	.comment-author img { display: none; }
 }
