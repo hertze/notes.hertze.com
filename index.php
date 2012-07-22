@@ -30,7 +30,9 @@
 					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 				<?php endif; ?>
 				<?php the_content(); ?>
-				<p class="datestamp">&mdash; <a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></span></a></p>
+				<?php if ( !is_page() ) : ?>
+					<p class="datestamp">&mdash; <a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></span></a></p>
+				<?php endif; ?>
  			</div>
 
 			<?php if ( is_singular() ) : ?>
@@ -55,7 +57,8 @@
 	        </nav>
         <?php endif; ?>
         <div id="description">
-        	<p><span class="asterisk">&#10045;</span> skrivs av Joakim Hertze och publiceras med Wordpress. Innehåll från <em>Instagram</em> och <em>Readability</em> aggregeras med hjälp av <a href="http://ifttt.com"><em>IFTTT</em></a>. All text är satt i <a href="http://www.myfonts.com/fonts/anatoletype/acuta-medium/"><em>Acuta</em></a>. Kontakta mig via gärna via <a href="mailto:desk@swedishpixels.com">epost</a>, eller <a href="http://twitter.com/hertze">Twitter</a>.</p>
+        	<p><span class="asterisk">&#10045;</span> skrivs av Joakim Hertze och publiceras med Wordpress. Innehåll från <em>Instagram</em> och <em>Readability</em> aggregeras med hjälp av <a href="http://ifttt.com"><em>IFTTT</em></a>. All text är satt i <a href="http://www.myfonts.com/fonts/anatoletype/acuta-medium/"><em>Acuta</em></a>. Kontakta mig via gärna via <span id="obf"><script>document.getElementById("obf").innerHTML="<n uers=\"znvygb:fbpvny@uregmr.pbz\" >rcbfg</n>".replace(/[a-zA-Z]/g,function(c){return String.fromCharCode((c<="Z"?90:122)>=(c=c.charCodeAt(0)+13)?c:c-26);});</script>
+<noscript><span style="unicode-bidi:bidi-override;direction:rtl;">moc.eztreh@laicos</span></noscript></span>, eller <a href="http://twitter.com/hertze">Twitter</a>.</p>
         </div>
         <?php get_search_form(); ?>
     </div>
