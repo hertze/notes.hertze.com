@@ -34,8 +34,10 @@ nav {
 
 #header {
 	position: fixed;
-	top: 5.6em;
-	margin-left: -4em;
+	top: 7.3em;
+	margin-left: -9em;
+	text-align: right;
+	width: 7em;
 }
 
 nav a {
@@ -81,15 +83,24 @@ blockquote p {
 	line-height: 1.875em;
 	font-weight: normal;
 	font-style: normal;
-
 }
 
 #header h1 a {
 	font-size: 3em;
 	position: relative;
+	left: 0.05em;
+	top: 0.1em;
+}
+
+#header ul {
+	/*position: relative;
 	top: 0.2em;
 	margin-right: 0.25em;
-	right: 0.1em;
+	right: 1em;*/
+}
+
+#header li {
+	margin: 0.934em 0;
 }
 
 article h1 {
@@ -105,30 +116,36 @@ article h2 {
 	color: #727069;
 }
 
+article h3 {
+	font-size: 1em;
+	line-height: 1.5em;
+	margin: 2em 0 1em 0;
+	color: #727069;
+	font-weight: bold;
+}
+
 a {
-	color: #8d8a82;
+	color: #8ea6be;
 	text-decoration: none;
 }
 
-#header h1 a {
+#header a {
 	color: #d8d6cd;
 	text-decoration: none;
 }
 
-.post p a {
-	text-decoration: none;
-	color: #607b96;
-}
-
-#header a, p.datestamp a, p.datestamp {
+#header a, p.datestamp a, p.datestamp, article h1 a, nav a {
 	color: #b0aba2;
 }
 
 
-a:hover, .post p a:hover, #header h1 a:hover {
-	color: #8ea6be;
+a:hover, .post p a:hover, #header a:hover {
+	color: #8d8a82;
 }
 
+#header a:hover, article h1 a:hover, p.datestamp a:hover, nav a:hover {
+	color: #8ea6be;
+}
 
 .datestamp {
 	margin: 1.5em 0;
@@ -138,7 +155,15 @@ a:hover, .post p a:hover, #header h1 a:hover {
 	margin: 2.25em 0;
 	padding: 0 0 0.75em 0;
 	border-bottom: 1px solid #e4e1dc;
+	overflow: hidden;
 }
+
+.page { 
+	margin: 2.25em 0;
+	padding: 0.1em 0 0.75em 0; /*0.1em för att kompensera skillnad mellan .post och .page pga. overflow.*/
+	overflow: visible;
+}
+
 
 .post img {
 	max-width: 100%;
@@ -153,7 +178,25 @@ a:hover, .post p a:hover, #header h1 a:hover {
 }
 
 .post li {
-	margin-left: 1.5em;	
+	margin-left: 1.5em;
+	line-height: 1.5em;
+	font-size: 1em;
+	margin-bottom: 1.5em;
+}
+
+.page ul {
+	list-style: none;
+}
+
+.page li {
+	margin: 0.5em 0;
+	font-size: 1em;
+	line-height: 1.5em;
+	background-color: #e9e6df;
+	padding: 0.5em 0.7em;
+	border-radius: 7px;
+	width: 35em;
+	margin-left: -0.7em;
 }
 
 .asterisk {
@@ -254,9 +297,12 @@ form input {
 
 @media screen and (max-device-width: 480px) {
 	body { font-size: 350%; width: 100%; margin-top: 3em; }
-	.post, #footer, #respond, #comments { padding: 0 5%; }
+	.post, .page, #footer, #respond, #comments { padding: 0 5%; }
+	.page li { width: 100%; overflow: hidden; }
 	article img { width:100%%; }
-	#header { position:inherit; width: 3em; margin: 0 auto; }
+	#header { position:inherit; margin: 0 auto; text-align: center; border-bottom: 1px solid #e4e1dc; padding-bottom: 1.875em; width: 100%; }
+	#header h1 { margin-bottom: 1em; }
+	#header li { display: inline; margin: 0 0.5em; width: 100%; }
 	#searchsubmit { display: none; }
 	#searchform #s { width: 90%; padding: 5%; font-size: 100%; -webkit-appearance: none; }
 	#submit { font-size: 100%; }
